@@ -1,4 +1,6 @@
 import br.com.filme.modelo.Filme;
+import br.com.filme.modelo.Serie;
+import br.com.filme.modelo.Titulo;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,24 +12,29 @@ public class Main {
         filme1.setAnoDeLancamento(2023);
         filme1.setDuracaoEmMinutos(230);
         filme1.setIncluidoNoPlano(true);
+        filme1.setDiretor("Diretor Genérico 1");
+
 
         filme1.avalia(4.2);
         filme1.avalia(5.0);
         filme1.avalia(2.0);
 
-        // Declaração Filme 2
-        Filme filme2 = new Filme();
+        // Declaração Serie 1
+        Serie serie1 = new Serie();
 
-        filme2.setNome("A freira");
-        filme2.setAnoDeLancamento(2023);
-        filme2.setDuracaoEmMinutos(150);
-        filme2.setIncluidoNoPlano(false);
+        serie1.setNome("Arrow");
+        serie1.setAtiva(false);
+        serie1.setAnoDeLancamento(2015);
+        serie1.setEpisodiosTemporada(20);
+        serie1.setTemporadas(6);
+        serie1.setMinutosEpisodios(50);
+        serie1.setIncluidoNoPlano(true);
 
-        filme2.avalia(5.0);
-        filme2.avalia(5.0);
-        filme2.avalia(2.0);
+        serie1.avalia(5);
+        serie1.avalia(4.5);
+        serie1.avalia(4.5);
 
         System.out.println(filme1.exibeFichaTecnica());
-        System.out.println(filme2.exibeFichaTecnica());
+        System.out.println(serie1.exibeFichaTecnica());
     }
 }
