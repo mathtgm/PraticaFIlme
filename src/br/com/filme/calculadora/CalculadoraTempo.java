@@ -1,4 +1,6 @@
-package br.com.filme.modelo;
+package br.com.filme.calculadora;
+
+import br.com.filme.modelo.Titulo;
 
 public class CalculadoraTempo {
 

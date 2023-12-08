@@ -1,6 +1,6 @@
 package br.com.filme.modelo;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo>{
 
     private String nome;
     private int anoDeLancamento;
@@ -8,6 +8,11 @@ public class Titulo {
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 
     public String getNome() {
         return nome;
@@ -59,4 +64,13 @@ public class Titulo {
                 """.formatted(nome.toUpperCase(), anoDeLancamento, duracaoEmMinutos, incluidoNoPlano, somaDasAvaliacoes / totalDeAvaliacoes, totalDeAvaliacoes);
     }
 
+    @Override
+    public int compareTo(Titulo titulo) {
+        return this.getNome().compareTo(titulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return this.getNome() + " " + "(%s)".formatted(this.getAnoDeLancamento()) ;
+    }
 }
